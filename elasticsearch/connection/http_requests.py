@@ -51,7 +51,7 @@ class RequestsHttpConnection(Connection):
             self.session.cert = (client_cert, client_key)
         if ca_certs:
             if not verify_certs:
-                raise ImproperlyConfigured("You cannot pass CA certificates when verify SSL is off.")
+                raise ImproperlyConfigured("You cannot pass CA certificates when verify certs is off.")
             self.session.verify = ca_certs
 
         if use_ssl and not verify_certs:
